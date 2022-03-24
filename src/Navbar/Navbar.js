@@ -8,7 +8,7 @@ const Navbar = () => {
       <nav className="navbar navbar-expand-lg navbar-dark bg-dark">
         <div className="container">
           <a className="navbar-brand" href="#">
-            <span className="text-warning">GAN</span> MASTER
+            <span className="text-warning">GUN</span> MASTER
           </a>
           <button
             className="navbar-toggler"
