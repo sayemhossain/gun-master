@@ -6,6 +6,7 @@ import Shop from "./Shop/Shop";
 import { useState } from "react";
 import Modal from "react-modal";
 
+// this style for modal
 const customStyles = {
   content: {
     top: "50%",

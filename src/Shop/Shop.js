@@ -4,6 +4,8 @@ import Card from "../Card/Card";
 import "./Shop.css";
 import Modal from "react-modal";
 import AddedCart from "../AddedCart/AddedCart";
+import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
+import { faXmark } from "@fortawesome/free-solid-svg-icons";
 
 const Shop = (props) => {
   console.log(props);
@@ -18,11 +20,9 @@ const Shop = (props) => {
 
   const handleAddToCart = (product) => {
     const newCart = [...cart, product];
-    // console.log(newCart);
     setCart(newCart);
   };
 
-  // console.log(cart);
   return (
     <div className="bg-secondary">
       <div className="container ">
@@ -36,20 +36,23 @@ const Shop = (props) => {
           ))}
         </div>
       </div>
-
-      <Modal
-        isOpen={props.modal}
-        onRequestClose={props.closeModal}
-        style={props.customStyles}
-        contentLabel="Example Modal"
-      >
-        <button onClick={props.closeModal}>Close</button>
-        <div>
-          {cart.map((item) => (
-            <AddedCart key={item.id} item={item}></AddedCart>
-          ))}
-        </div>
-      </Modal>
+      <div className="modal-container">
+        <Modal
+          isOpen={props.modal}
+          onRequestClose={props.closeModal}
+          style={props.customStyles}
+          contentLabel="Example Modal"
+        >
+          <div className="text-end">
+            <FontAwesomeIcon onClick={props.closeModal} icon={faXmark} />
+          </div>
+          <div>
+            {cart.map((item) => (
+              <AddedCart key={item.id} item={item}></AddedCart>
+            ))}
+          </div>
+        </Modal>
+      </div>
     </div>
   );
 };
