@@ -43,8 +43,12 @@ const Shop = (props) => {
           style={props.customStyles}
           contentLabel="Example Modal"
         >
-          <div className="text-end">
-            <FontAwesomeIcon onClick={props.closeModal} icon={faXmark} />
+          <div className="text-end ">
+            <FontAwesomeIcon
+              className="bg-light text-danger px-3 py-2 rounded text-end cross"
+              onClick={props.closeModal}
+              icon={faXmark}
+            />
           </div>
           <div>
             {cart.map((item) => (

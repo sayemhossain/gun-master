@@ -5,3 +5,12 @@
 .modal-container Modal {
   width: 50%;
 }
+.cross {
+  box-shadow: 10px 10px 10px rgb(211, 210, 209);
+  border: 1px solid gray;
+  cursor: pointer;
+  transition: all ease-in 0.3s;
+}
+.cross:hover {
+  transform: scale(1.2);
+}

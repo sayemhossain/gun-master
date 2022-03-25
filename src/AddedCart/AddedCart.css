@@ -2,6 +2,7 @@
   display: grid;
   grid-template-columns: repeat(2, 1fr);
   gap: 50px;
+  box-shadow: 10px 7px 10px rgb(75, 74, 74);
 }
 .added-cart img {
   height: 70px;

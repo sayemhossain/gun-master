@@ -4,13 +4,12 @@ import { faCartPlus } from "@fortawesome/free-solid-svg-icons";
 import "./Navbar.css";
 
 const Navbar = ({ openModal }) => {
-  // console.log(openModal);
   return (
     <div>
       <nav className="navbar navbar-expand-lg navbar-dark bg-dark">
         <div className="container">
-          <a className="navbar-brand" href="#">
-            <span className="text-warning">GUN</span> MASTER
+          <a className="navbar-brand fw-bold" href="#">
+            <span className="text-danger">GUN</span> MASTER
           </a>
           <button
             className="navbar-toggler"
@@ -46,12 +45,15 @@ const Navbar = ({ openModal }) => {
                 </a>
               </li>
               <div className="cart-counter">
-                <li onClick={openModal} className="nav-item">
+                <li
+                  onClick={openModal}
+                  className="nav-item bg-danger rounded-pill "
+                >
                   <a className="nav-link " href="#">
                     <FontAwesomeIcon className="text-white" icon={faCartPlus} />
-                    <sup className=" rounded-pill text-warning fw-bold fs-6">
+                    {/* <sup className=" rounded-pill text-warning fw-bold fs-6">
                       0
-                    </sup>
+                    </sup> */}
                   </a>
                 </li>
               </div>
