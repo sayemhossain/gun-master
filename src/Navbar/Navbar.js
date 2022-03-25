@@ -2,7 +2,8 @@ import React from "react";
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
 import { faCartPlus } from "@fortawesome/free-solid-svg-icons";
 
-const Navbar = () => {
+const Navbar = ({ openModal }) => {
+  // console.log(openModal);
   return (
     <div>
       <nav className="navbar navbar-expand-lg navbar-dark bg-dark">
@@ -43,7 +44,7 @@ const Navbar = () => {
                   About
                 </a>
               </li>
-              <li className="nav-item">
+              <li onClick={openModal} className="nav-item">
                 <a className="nav-link " href="#">
                   <FontAwesomeIcon className="text-white" icon={faCartPlus} />
                   <sup className=" rounded-pill text-warning fw-bold fs-6">
