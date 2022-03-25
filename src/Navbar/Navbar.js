@@ -6,7 +6,7 @@ import "./Navbar.css";
 const Navbar = ({ openModal }) => {
   return (
     <div>
-      <nav className="navbar navbar-expand-lg navbar-dark bg-dark">
+      <nav className="navbar navbar-expand-md text-center navbar-dark bg-dark">
         <div className="container">
           <a className="navbar-brand fw-bold" href="#">
             <span className="text-danger">GUN</span> MASTER
