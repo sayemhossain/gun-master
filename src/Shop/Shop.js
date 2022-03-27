@@ -6,6 +6,7 @@ import Modal from "react-modal";
 import AddedCart from "../AddedCart/AddedCart";
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
 import { faXmark } from "@fortawesome/free-solid-svg-icons";
+import { addToDb, getStoredCart } from "../Utilities/fakeDb";
 
 const Shop = (props) => {
   console.log(props);
@@ -18,9 +19,25 @@ const Shop = (props) => {
       .then((data) => setProducts(data));
   }, []);
 
+  useEffect(() => {
+    const storedCart = getStoredCart();
+    console.log(storedCart);
+    let savedProduct = [];
+    for (const id in storedCart) {
+      const addedProduct = products.find((product) => product.id == id);
+      if (addedProduct) {
+        const quantity = storedCart[id];
+        addedProduct.quantity = quantity;
+        savedProduct.push(addedProduct);
+      }
+    }
+    setCart(savedProduct);
+  }, [products]);
+
   const handleAddToCart = (product) => {
     const newCart = [...cart, product];
     setCart(newCart);
+    addToDb(product.id);
   };
 
   return (
