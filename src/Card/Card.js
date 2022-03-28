@@ -16,7 +16,7 @@ const Card = (props) => {
           <p className="my-1 text-success fw-bold">{category}</p>
           <div className="my-4">
             <p className="my-1">Action: {action}</p>
-            <p className="my-1">Bllet: {bullet}</p>
+            <p className="my-1">Bullet: {bullet}</p>
             <p className="my-1">
               Price: <span className="fw-bold text-danger">${price}</span>
             </p>
